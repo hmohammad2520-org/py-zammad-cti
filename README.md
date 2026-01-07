@@ -94,7 +94,7 @@ Notify Zammad that a new call has started.
 client.new_call(
     _from="+491234567",
     to="+498765432",
-    direction=CallDirection.IN,
+    direction='in',
     call_id="call-uuid-123",
     user="John Doe",
     queue="Support",
@@ -122,7 +122,7 @@ Notify Zammad that a call has been answered.
 client.answer(
     _from="+491234567",
     to="+498765432",
-    direction=CallDirection.IN,
+    direction='in',
     call_id="call-uuid-123",
     answering_number="+498765432",
     user="Agent Smith",
@@ -150,9 +150,9 @@ Notify Zammad that a call has ended.
 client.hangup(
     _from="+491234567",
     to="+498765432",
-    direction=CallDirection.IN,
+    direction='in',
     call_id="call-uuid-123",
-    cause=HangupCause.NORMAL_CLEARING,
+    cause='normalClearing',
     answering_number="+498765432",
 )
 ```
