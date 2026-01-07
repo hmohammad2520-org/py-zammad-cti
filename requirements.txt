@@ -1,0 +1,6 @@
+requests==2.32.4
+classmods==1.2.1
+
+python-dotenv
+setuptools
+pytest
