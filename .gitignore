@@ -1,0 +1,15 @@
+# abc folders
+.git/
+.pytest_cache/
+__cache__
+__pycache__
+.venv/
+.temp/
+.log/
+.db/
+.dev/
+__cache__/
+
+# abc Files
+.env
+dev_*.*
