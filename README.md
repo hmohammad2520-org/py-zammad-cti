@@ -79,7 +79,7 @@ client = CTIClient(**ENVmod.load_args(CTIClient.__init__))
 
 Read classmods documentations for more info and usage:
 
-📖 Official Zammad CTI documentation:
+📖 Official classmods documentation:
 [https://github.com/hmohammad2520-org/classmods](https://github.com/hmohammad2520-org/classmods)
 
 ---
