@@ -26,7 +26,6 @@ class CTIClient:
         self._url = url
         self._verify_ssl = verify_ssl
         self._session = requests.session()
-        self._session.headers['Content-Type'] = 'application/json'
 
 
     @logwrap(
