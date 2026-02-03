@@ -1,8 +1,10 @@
-import requests
+import logging, requests
 from classmods import ENVMod, logwrap
 from typing import Any, Dict, List, Optional
 
 from ._type_aliases import CallDirection, HangupCause
+
+logger = logging.getLogger('ZammadCTI')
 
 class CTIClient:
     """
@@ -31,6 +33,7 @@ class CTIClient:
     @logwrap(
         before='Sending HTTP request: args:{args} - kwargs:{kwargs}',
         after=False,
+        logger=logger,
     )
     def _send_request(
             self,
@@ -82,6 +85,7 @@ class CTIClient:
     @logwrap(
         before=False,
         after='Adding new call: {kwargs}, result: {result}',
+        logger=logger,
     )
     def new_call(
             self,
@@ -125,6 +129,7 @@ class CTIClient:
     @logwrap(
         before=False,
         after='Changed call state to hangup: {kwargs}, result: {result}',
+        logger=logger,
     )
     def hangup(
             self,
@@ -170,6 +175,7 @@ class CTIClient:
     @logwrap(
         before=False,
         after='Changed call state to answer: {kwargs}, result: {result}',
+        logger=logger,
     )
     def answer(
             self,
