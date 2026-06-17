@@ -1,17 +1,11 @@
 [build-system]
-requires = ["setuptools>=42", "wheel"]
+requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
+
 
 [project]
 name = "py-zammad-cti"
-version = "0.0.3"
-description = "Zammad CTI client"
-readme = "README.md"
-license = { file = "LICENSE" }
-authors = [
-    { name = "hmohammad", email = "hmohammad2520@gmail.com" }
-]
-keywords = ["python", "library", "zammad", "cti"]
+dynamic = ["version", "description", "authors", "keywords"]
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
@@ -22,7 +16,42 @@ dependencies = [
     "classmods==1.2.1"
 ]
 requires-python = ">=3.9"
+readme = "README.md"
+license = {file = "LICENSE"}
+
+
+[tool.setuptools.dynamic]
+version = {attr = "zammad_cti.__version__"}
+description = {attr = "zammad_cti.__description__"}
+authors = {attr = "zammad_cti.__authors__"}
+keywords = {attr = "zammad_cti.__keywords__"}
+
+
+[tool.setuptools]
+include-package-data = true
+
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["zammad_cti*", "zammad_cti.*"]
+exclude = ["test*", "dev*", "scripts*"]
+
+
+[tool.setuptools.package-data]
+zammad_cti = [
+    "README.md",
+    "LICENSE",
+]
+
+
+[tool.setuptools.exclude-package-data]
+zammad_cti = [
+    "__pycache__/*",
+    "*.pyc",
+    "*.so"
+]
+
 
 [project.urls]
-Homepage = "https://github.com/hmohammad2520-org/py-zammad-cti"
-BugTracker = "https://github.com/hmohammad2520-org/py-zammad-cti"
+Homepage = "https://github.com/devixa-tech/py-zammad-cti"
+BugTracker = "https://github.com/devixa-tech/py-zammad-cti/issues"
